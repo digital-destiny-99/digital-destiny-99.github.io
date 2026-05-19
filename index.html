@@ -15,9 +15,9 @@
       --gray: #4a4a46;
       --light: #eeeeea;
       --blood: #7a0000;
-      --deep-blood: #3d0000;
       --focus: #005fcc;
       --max-width: 1160px;
+      --reading-width: 76ch;
     }
 
     * {
@@ -26,6 +26,7 @@
 
     html {
       scroll-behavior: smooth;
+      font-size: 16px;
     }
 
     body {
@@ -33,8 +34,9 @@
       background: var(--paper);
       color: var(--black);
       font-family: "Space Grotesk", Arial, sans-serif;
-      line-height: 1.7;
-      letter-spacing: -0.01em;
+      font-size: 1rem;
+      line-height: 1.6;
+      letter-spacing: 0;
     }
 
     a {
@@ -60,17 +62,17 @@
     }
 
     .top-strip {
-      min-height: 44px;
-      padding: 0.65rem clamp(1rem, 4vw, 2rem);
+      min-height: 48px;
+      padding: 8px clamp(16px, 4vw, 32px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 20px;
       background: var(--black);
       color: var(--white);
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
       font-weight: 700;
     }
 
@@ -79,11 +81,11 @@
     }
 
     .site-header {
-      padding: 1rem clamp(1rem, 4vw, 2rem);
+      padding: 16px clamp(16px, 4vw, 32px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1.5rem;
+      gap: 24px;
       background: var(--white);
       border-bottom: 2px solid var(--black);
     }
@@ -91,7 +93,7 @@
     .logo {
       font-family: "Bebas Neue", Impact, sans-serif;
       font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 0.9;
+      line-height: 1.1;
       letter-spacing: 0.04em;
       text-decoration: none;
     }
@@ -103,17 +105,19 @@
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.85rem 1.2rem;
-      font-size: 0.78rem;
+      gap: 16px 24px;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-weight: 700;
     }
 
     .nav-links a {
-      min-height: 44px;
+      min-width: 48px;
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       text-decoration: none;
       border-bottom: 2px solid transparent;
     }
@@ -125,7 +129,7 @@
 
     .hero {
       min-height: 74vh;
-      padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem);
+      padding: clamp(48px, 8vw, 96px) clamp(16px, 4vw, 32px);
       position: relative;
       overflow: hidden;
       background:
@@ -138,28 +142,33 @@
     .hero::after {
       content: "DESIGN / TECH / STUDY";
       position: absolute;
-      right: -4.4rem;
-      top: 3.4rem;
-      transform: rotate(90deg);
+      right: 20px;
+      top: 32px;
+      bottom: 32px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
       color: var(--gray);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 800;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.18em;
+      line-height: 1;
+      z-index: 0;
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
       max-width: 900px;
+      padding-right: 56px;
     }
 
     .label {
-      margin: 0 0 1rem;
+      margin: 0 0 16px;
       color: var(--blood);
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.12em;
     }
 
     h1 {
@@ -167,10 +176,19 @@
       max-width: 900px;
       font-family: "Bebas Neue", Impact, sans-serif;
       font-size: clamp(3.6rem, 11vw, 8rem);
-      line-height: 0.88;
+      line-height: 1.05;
       letter-spacing: 0.01em;
       text-transform: uppercase;
       overflow-wrap: break-word;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
 
     .serif-mark {
@@ -179,36 +197,48 @@
       font-style: italic;
       color: var(--blood);
       text-transform: none;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
       font-size: 0.95em;
     }
 
-    .hero-text {
-      max-width: 540px;
-      margin: 1.5rem 0 0;
+    .hero-text,
+    .project-desc,
+    .intro-grid p,
+    .section > p {
+      max-width: var(--reading-width);
       color: var(--gray);
-      font-size: clamp(1rem, 1.8vw, 1.18rem);
       font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .hero-text {
+      margin: 24px 0 0;
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+    }
+
+    p + p {
+      margin-top: 48px;
     }
 
     .stamp-row {
-      margin-top: 2rem;
+      margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 16px;
     }
 
     .stamp {
-      min-height: 44px;
+      min-width: 48px;
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
       border: 2px solid var(--black);
-      padding: 0.45rem 0.7rem;
+      padding: 8px 12px;
       background: var(--white);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
     }
 
     .stamp.blood {
@@ -218,47 +248,38 @@
     }
 
     .section {
-      padding: clamp(3rem, 7vw, 5rem) clamp(1rem, 4vw, 2rem);
+      padding: clamp(48px, 7vw, 80px) clamp(16px, 4vw, 32px);
       background: var(--white);
       border-bottom: 2px solid var(--black);
     }
 
     .section-heading {
-      margin-bottom: 1.8rem;
-      padding-bottom: 1rem;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 1rem;
+      gap: 24px;
       border-bottom: 2px solid var(--black);
-    }
-
-    h2 {
-      margin: 0;
-      font-family: "Bebas Neue", Impact, sans-serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 0.88;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
     }
 
     .section-number {
       color: var(--blood);
       font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.12em;
     }
 
     .work-list {
       display: grid;
-      gap: 1rem;
+      gap: 16px;
     }
 
     .project-card {
-      padding: 1.1rem;
+      padding: 24px;
       display: grid;
       grid-template-columns: 0.7fr 1.3fr auto;
-      gap: 1rem;
+      gap: 24px;
       align-items: center;
       background: var(--white);
       color: inherit;
@@ -276,27 +297,24 @@
     .project-type {
       margin: 0;
       color: var(--blood);
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
     }
 
     .project-title {
       margin: 0;
       font-family: "Bebas Neue", Impact, sans-serif;
       font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 0.9;
+      line-height: 1.05;
       text-transform: uppercase;
       letter-spacing: 0.02em;
     }
 
     .project-desc {
-      max-width: 520px;
-      margin: 0.35rem 0 0;
-      color: var(--gray);
-      font-size: 0.95rem;
-      font-weight: 500;
+      margin: 8px 0 0;
+      font-size: 1rem;
     }
 
     .arrow {
@@ -307,41 +325,38 @@
     .intro-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
-      gap: clamp(1.5rem, 5vw, 4rem);
+      gap: clamp(24px, 5vw, 64px);
       align-items: start;
     }
 
-    .intro-grid p,
-    .section > p {
-      max-width: 640px;
+    .intro-grid p {
       margin-top: 0;
-      color: var(--gray);
-      font-weight: 500;
     }
 
     .side-note {
-      padding-left: 1rem;
+      padding-left: 16px;
       border-left: 5px solid var(--blood);
       font-family: "Instrument Serif", Georgia, serif;
       font-size: clamp(1.4rem, 3vw, 2rem);
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
     .tag-row {
-      margin-top: 2rem;
+      margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem;
+      gap: 16px;
     }
 
     .tag-row span {
-      min-height: 44px;
+      min-width: 48px;
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
       border: 2px solid var(--black);
-      padding: 0.55rem 0.75rem;
+      padding: 8px 12px;
       background: var(--white);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -353,24 +368,26 @@
     }
 
     .links {
-      margin-top: 2rem;
+      margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 16px;
     }
 
     .links a {
+      min-width: 48px;
       min-height: 48px;
       display: inline-flex;
       align-items: center;
-      padding: 0.65rem 0.9rem;
+      justify-content: center;
+      padding: 8px 16px;
       background: var(--black);
       color: var(--white);
       border: 2px solid var(--black);
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.13em;
-      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
       font-weight: 800;
     }
 
@@ -380,15 +397,15 @@
     }
 
     .footer {
-      padding: 1.2rem clamp(1rem, 4vw, 2rem);
+      padding: 24px clamp(16px, 4vw, 32px);
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 20px;
       background: var(--black);
       color: var(--white);
       text-transform: uppercase;
-      letter-spacing: 0.13em;
-      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
       font-weight: 800;
     }
 
@@ -406,6 +423,10 @@
 
       .hero::after {
         display: none;
+      }
+
+      .hero-content {
+        padding-right: 0;
       }
 
       .project-card {
@@ -456,7 +477,7 @@
   <div class="page-shell">
     <header class="top-strip">
       <span>Portfolio</span>
-      <span>IT · UX/UI · Design</span>
+      <span>IT · Design · Frontend</span>
     </header>
 
     <header class="site-header">
@@ -473,23 +494,23 @@
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="label">Design focused · Tech minded</p>
+          <p class="label">Tech student · Design focused</p>
 
           <h1>
-            Code,<br>
+            Structure,<br>
             <span class="serif-mark">Design</span><br>
-            & digital experiments.
+            and digital work.
           </h1>
 
           <p class="hero-text">
-            Exploring design through systems and structure.
+            I build technical projects and visual studies while learning how systems, interfaces and design connect.
           </p>
 
           <div class="stamp-row" aria-label="Portfolio focus areas">
             <span class="stamp blood">Design</span>
             <span class="stamp">Frontend</span>
-            <span class="stamp">Digital Systems</span>
-            <span class="stamp">Creative technology</span>
+            <span class="stamp">Technical Systems</span>
+            <span class="stamp">Accessibility</span>
           </div>
         </div>
       </section>
@@ -507,9 +528,9 @@
             </div>
 
             <div>
-              <h3 class="project-title">Python Game Project</h3>
+              <h3 class="project-title">Technical Projects</h3>
               <p class="project-desc">
-                A text-based Python game with rooms, inventory, player choices and basic game logic.
+                IT coursework, coding projects and technical practice focused on systems, structure and problem solving.
               </p>
             </div>
 
@@ -524,7 +545,7 @@
             <div>
               <h3 class="project-title">Design Work</h3>
               <p class="project-desc">
-                Interface ideas, visual studies and design pieces with a focus on clarity and usability.
+                Visual layouts, interface studies and design pieces focused on clarity, mood and usability.
               </p>
             </div>
 
@@ -539,7 +560,7 @@
             <div>
               <h3 class="project-title">Experiments</h3>
               <p class="project-desc">
-                Small layout tests, CodePen sketches and unfinished ideas that help me build better work.
+                Smaller layout tests, code sketches and unfinished ideas used to sharpen the work.
               </p>
             </div>
 
@@ -557,16 +578,16 @@
         <div class="intro-grid">
           <div>
             <p>
-              I am interested in UX/UI, frontend design and technical systems. My work usually starts with structure, then I push the visuals until it feels more like me.
+              I am studying information technology with a growing focus on design. I like the space where structure, visuals and usability start to overlap.
             </p>
 
             <p>
-              I care about readable pages, accessible design, sharp layouts and details that make a project easier to use.
+              My projects are still developing, but the direction is clear. Clean structure, accessible layouts and design that feels considered without feeling overworked.
             </p>
           </div>
 
           <aside class="side-note">
-            Design brain. Tech track. A little weird on purpose.
+            Technical underneath. Visual on purpose.
           </aside>
         </div>
 
@@ -582,20 +603,7 @@
         </div>
       </section>
 
-      <section id="practice" class="section">
-        <div class="section-heading">
-          <h2>Practice</h2>
-          <span class="section-number">03</span>
-        </div>
 
-        <p>
-          This is where I keep smaller work while I build stronger projects. Some pieces are finished. Some are tests. All of it teaches me something.
-        </p>
-
-        <div class="links">
-          <a href="https://codepen.io/digital-destiny-99" target="_blank" rel="noopener">CodePen</a>
-        </div>
-      </section>
 
       <section id="links" class="section">
         <div class="section-heading">
@@ -604,14 +612,14 @@
         </div>
 
         <p>
-          Places where I keep projects, practice work and updates.
+          Places where I keep projects and practice work.
         </p>
 
         <div class="links">
           <a href="https://github.com/digital-destiny-99" target="_blank" rel="noopener">GitHub</a>
           <a href="https://codepen.io/digital-destiny-99" target="_blank" rel="noopener">CodePen</a>
           <a href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:YOUREMAIL@example.com">Email</a>
+          <a href="mailto:digitaldestiny.co@gmail.com">Email</a>
         </div>
       </section>
     </main>
