@@ -4,12 +4,619 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ozzy and The Tall Man | Destiny Rodriguez</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+    :root {
+      --black: #050505;
+      --white: #ffffff;
+      --paper: #f7f7f4;
+      --gray: #4a4a46;
+      --light: #eeeeea;
+      --blood: #7a0000;
+      --focus: #005fcc;
+      --max-width: 1160px;
+      --reading-width: 74ch;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--black);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 5px;
+    }
+
+    ::selection {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .page-shell {
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
+      background: var(--white);
+      border-left: 2px solid var(--black);
+      border-right: 2px solid var(--black);
+    }
+
+    .top-strip {
+      min-height: 48px;
+      padding: 8px clamp(16px, 4vw, 32px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      background: var(--black);
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .top-strip span:first-child {
+      color: var(--blood);
+    }
+
+    .site-header {
+      padding: 16px clamp(16px, 4vw, 32px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      background: var(--white);
+      border-bottom: 2px solid var(--black);
+    }
+
+    .logo {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--blood);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      min-width: 48px;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: var(--blood);
+      color: var(--blood);
+    }
+
+    .hero {
+      padding: clamp(48px, 8vw, 88px) clamp(16px, 4vw, 32px);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(122, 0, 0, 0.11), transparent 22rem),
+        linear-gradient(90deg, transparent 0 49%, rgba(0, 0, 0, 0.06) 49% 50%, transparent 50%),
+        var(--white);
+      border-bottom: 2px solid var(--black);
+    }
+
+    .label {
+      margin: 0 0 16px;
+      color: var(--blood);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    .stat-number {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 1.02;
+      letter-spacing: 0.01em;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.25rem, 5.5vw, 4.4rem);
+      line-height: 1.02;
+      letter-spacing: 0.02em;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      max-width: var(--reading-width);
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      font-size: clamp(1rem, 1.6vw, 1.12rem);
+    }
+
+    .hero-actions,
+    .links {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button-link {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border: 2px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .button-link.secondary {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .button-link:hover {
+      background: var(--blood);
+      border-color: var(--blood);
+      color: var(--white);
+    }
+
+    .section {
+      padding: clamp(44px, 7vw, 76px) clamp(16px, 4vw, 32px);
+      background: var(--white);
+      border-bottom: 2px solid var(--black);
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      border-bottom: 2px solid var(--black);
+    }
+
+    .section-number {
+      color: var(--blood);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .overview-grid,
+    .case-grid,
+    .gallery-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .overview-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .case-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat-card,
+    .case-card,
+    .screenshot-card {
+      padding: 24px;
+      border: 2px solid var(--black);
+      background: var(--white);
+    }
+
+    .stat-number {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blood);
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .stat-card p,
+    .case-card p,
+    .screenshot-card p {
+      margin-bottom: 0;
+    }
+
+    .screenshot-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(135deg, rgba(122, 0, 0, 0.08), transparent 35%),
+        var(--light);
+    }
+
+    .file-path {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 10px;
+      background: var(--black);
+      color: var(--white);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .process-step {
+      position: relative;
+      padding: 24px 24px 24px 72px;
+      border: 2px solid var(--black);
+      background: var(--white);
+    }
+
+    .process-step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      left: 20px;
+      top: 24px;
+      color: var(--blood);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .tag-row {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag-row span {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid var(--black);
+      padding: 8px 12px;
+      background: var(--white);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .tag-row span:nth-child(even) {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .footer {
+      padding: 24px clamp(16px, 4vw, 32px);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      background: var(--black);
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 850px) {
+      .top-strip,
+      .site-header,
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .overview-grid,
+      .case-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page-shell {
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 16vw, 4.6rem);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Ozzy and The Tall Man</h1>
-  <p>A Python text adventure focused on navigation, interaction logic and structured gameplay.</p>
-  <p><a href="python-game/main.py">View Python File</a></p>
-  <p><a href="python-game/README.md">Read Project Notes</a></p>
-  <p><a href="technical.html">Back to Technical Projects</a></p>
+  <div class="page-shell">
+    <header class="top-strip">
+      <span>Case Study</span>
+      <span>Python · Interaction Logic · UX Thinking</span>
+    </header>
+
+    <header class="site-header">
+      <a class="logo" href="index.html">Destiny<span>.</span></a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="technical.html">Technical</a>
+        <a href="python-game/main.py">Code</a>
+        <a href="python-game/README.md">README</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="label">Python Text Adventure</p>
+        <h1>Ozzy and The Tall Man</h1>
+        <p class="hero-text">
+          A text-based game about movement, choices and feedback. I built this project to practice Python logic while thinking about how a player moves through a simple interactive system.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button-link" href="python-game/main.py">View Python File</a>
+          <a class="button-link secondary" href="python-game/README.md">Read Project Notes</a>
+          <a class="button-link secondary" href="technical.html">Back to Technical</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>Overview</h2>
+          <span class="section-number">01</span>
+        </div>
+
+        <div class="overview-grid">
+          <article class="stat-card">
+            <span class="stat-number">01</span>
+            <h3>Role</h3>
+            <p>Student developer, writer and interaction designer for the game flow.</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number">02</span>
+            <h3>Tools</h3>
+            <p>Python, GitHub, terminal-style interaction and plain text interface design.</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number">03</span>
+            <h3>Focus</h3>
+            <p>Rooms, commands, inventory, feedback and conditional game logic.</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number">04</span>
+            <h3>UX Angle</h3>
+            <p>Clear choices, readable prompts and a path that helps players understand what to do next.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>Problem</h2>
+          <span class="section-number">02</span>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <h3>The goal</h3>
+            <p>
+              Build a working text adventure where the player can explore a neighborhood, collect clues and reach a final ending only after completing the right steps.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h3>The UX challenge</h3>
+            <p>
+              Text games can become confusing fast. The player needs clear room descriptions, obvious commands, useful feedback and a sense of progress without a visual interface doing the work.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>System</h2>
+          <span class="section-number">03</span>
+        </div>
+
+        <div class="process-list">
+          <article class="process-step">
+            <h3>Map structure</h3>
+            <p>Rooms are organized in a dictionary so each location has a description, exits and a possible item.</p>
+          </article>
+
+          <article class="process-step">
+            <h3>Player commands</h3>
+            <p>The game accepts short commands like north, inventory, map and get item. This keeps interaction simple and learnable.</p>
+          </article>
+
+          <article class="process-step">
+            <h3>Inventory logic</h3>
+            <p>Items disappear after pickup and stay in the player inventory, which gives the player visible progress through the game.</p>
+          </article>
+
+          <article class="process-step">
+            <h3>Final room logic</h3>
+            <p>The haunted tree house checks whether the player has every required item. If not, the game sends Jesse back with feedback instead of ending abruptly.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>Screenshots</h2>
+          <span class="section-number">04</span>
+        </div>
+
+        <p>
+          Upload screenshots into the folder shown on each card. Once the images are in GitHub, I can replace these placeholders with the actual screenshots.
+        </p>
+
+        <div class="gallery-grid">
+          <article class="screenshot-card">
+            <div>
+              <h3>Opening screen</h3>
+              <p>Use this for the intro or title area of the game.</p>
+            </div>
+            <span class="file-path">python-game/screenshots/intro-screen.png</span>
+          </article>
+
+          <article class="screenshot-card">
+            <div>
+              <h3>Gameplay</h3>
+              <p>Use this for a room description with available exits or an item.</p>
+            </div>
+            <span class="file-path">python-game/screenshots/gameplay-screen.png</span>
+          </article>
+
+          <article class="screenshot-card">
+            <div>
+              <h3>Inventory</h3>
+              <p>Use this for collected items or the command feedback.</p>
+            </div>
+            <span class="file-path">python-game/screenshots/inventory-screen.png</span>
+          </article>
+
+          <article class="screenshot-card">
+            <div>
+              <h3>Map or ending</h3>
+              <p>Use this for the ASCII map, final encounter or win screen.</p>
+            </div>
+            <span class="file-path">python-game/screenshots/map-ending-screen.png</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>What I Learned</h2>
+          <span class="section-number">05</span>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <h3>Technical</h3>
+            <p>
+              I practiced functions, loops, conditionals, dictionaries, lists and game state. The biggest improvement was organizing the project so the code reads more clearly.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h3>UX/UI</h3>
+            <p>
+              I learned that interaction design is not only visual. Even a command-line game needs hierarchy, feedback, navigation and readable choices.
+            </p>
+          </article>
+        </div>
+
+        <div class="tag-row" aria-label="Project skills">
+          <span>Python</span>
+          <span>Interaction Logic</span>
+          <span>User Flow</span>
+          <span>Game State</span>
+          <span>Accessibility</span>
+          <span>Technical Writing</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Ozzy and The Tall Man</span>
+      <span>Python case study</span>
+    </footer>
+  </div>
 </body>
 </html>
