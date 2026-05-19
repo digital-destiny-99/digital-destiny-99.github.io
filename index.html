@@ -6,22 +6,18 @@
   <title>Destiny Rodriguez | Portfolio</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
 
     :root {
       --black: #050505;
-      --ink: #121212;
       --white: #ffffff;
-      --off-white: #f7f7f5;
-      --line: #d7d7d2;
-      --gray: #5e5e5a;
-      --soft-gray: #ededeb;
-      --red: #8f1119;
-      --dark-red: #4a070b;
-      --focus: #0047ff;
-
-      --border-heavy: 4px solid var(--black);
-      --border-mid: 2px solid var(--black);
+      --paper: #f7f7f4;
+      --gray: #4a4a46;
+      --light: #eeeeea;
+      --blood: #7a0000;
+      --deep-blood: #3d0000;
+      --focus: #005fcc;
+      --max-width: 1160px;
     }
 
     * {
@@ -34,23 +30,15 @@
 
     body {
       margin: 0;
-      background: var(--white);
-      color: var(--ink);
-      font-family: "Geist", Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    ::selection {
-      background: var(--black);
-      color: var(--white);
+      background: var(--paper);
+      color: var(--black);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
     }
 
     a {
       color: inherit;
-    }
-
-    a:hover {
-      color: var(--red);
     }
 
     a:focus-visible {
@@ -58,570 +46,580 @@
       outline-offset: 5px;
     }
 
-    .top-bar {
+    ::selection {
       background: var(--black);
       color: var(--white);
-      border: var(--border-heavy);
-      padding: 0.8rem clamp(1rem, 4vw, 2rem);
+    }
+
+    .page-shell {
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
+      background: var(--white);
+      border-left: 2px solid var(--black);
+      border-right: 2px solid var(--black);
+    }
+
+    .top-strip {
+      min-height: 44px;
+      padding: 0.65rem clamp(1rem, 4vw, 2rem);
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 1rem;
+      background: var(--black);
+      color: var(--white);
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
       font-weight: 700;
     }
 
-    .top-bar span:first-child {
-      color: var(--red);
+    .top-strip span:first-child {
+      color: var(--blood);
     }
 
     .site-header {
-      border-left: var(--border-heavy);
-      border-right: var(--border-heavy);
-      border-bottom: var(--border-mid);
-      padding: 1.1rem clamp(1rem, 4vw, 2rem);
+      padding: 1rem clamp(1rem, 4vw, 2rem);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1.5rem;
       background: var(--white);
+      border-bottom: 2px solid var(--black);
     }
 
     .logo {
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(1.4rem, 2vw, 1.8rem);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
       text-decoration: none;
     }
 
     .logo span {
-      color: var(--red);
+      color: var(--blood);
     }
 
     .nav-links {
       display: flex;
-      gap: clamp(1rem, 3vw, 2rem);
       flex-wrap: wrap;
+      gap: 0.85rem 1.2rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.75rem;
+      letter-spacing: 0.12em;
       font-weight: 700;
-      color: var(--gray);
     }
 
     .nav-links a {
-      text-decoration: none;
       min-height: 44px;
       display: inline-flex;
       align-items: center;
+      text-decoration: none;
       border-bottom: 2px solid transparent;
     }
 
     .nav-links a:hover {
-      border-bottom-color: var(--red);
-      color: var(--black);
+      border-bottom-color: var(--blood);
+      color: var(--blood);
     }
 
     .hero {
-      min-height: 72vh;
-      border-left: var(--border-heavy);
-      border-right: var(--border-heavy);
-      border-bottom: var(--border-mid);
-      padding: clamp(4rem, 9vw, 7rem) clamp(1rem, 4vw, 2rem);
+      min-height: 74vh;
+      padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem);
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px),
+        radial-gradient(circle at 15% 20%, rgba(122, 0, 0, 0.11), transparent 22rem),
+        linear-gradient(90deg, transparent 0 49%, rgba(0, 0, 0, 0.06) 49% 50%, transparent 50%),
         var(--white);
-      background-size: 72px 72px;
+      border-bottom: 2px solid var(--black);
     }
 
-    .ghost-letter {
+    .hero::after {
+      content: "DESIGN / TECH / STUDY";
       position: absolute;
-      top: 1rem;
-      right: clamp(1rem, 8vw, 6rem);
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(9rem, 24vw, 20rem);
-      font-style: italic;
-      line-height: 0.8;
-      color: rgba(0, 0, 0, 0.06);
-      pointer-events: none;
-      user-select: none;
+      right: -4.4rem;
+      top: 3.4rem;
+      transform: rotate(90deg);
+      color: var(--gray);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.28em;
     }
 
     .hero-content {
-      max-width: 54rem;
       position: relative;
       z-index: 1;
+      max-width: 900px;
     }
 
-    .small-label {
+    .label {
       margin: 0 0 1rem;
-      color: var(--red);
+      color: var(--blood);
+      font-size: 0.76rem;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      font-size: 0.72rem;
-      font-weight: 800;
-    }
-
-    h1,
-    h2,
-    h3 {
-      margin: 0;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-weight: 400;
-      color: var(--ink);
     }
 
     h1 {
-      max-width: 48rem;
-      font-size: clamp(4rem, 12vw, 8.5rem);
-      line-height: 0.9;
-      letter-spacing: -0.055em;
-    }
-
-    h2 {
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      line-height: 0.96;
-      letter-spacing: -0.045em;
-    }
-
-    h3 {
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-
-    .accent-word {
-      color: var(--red);
-      font-style: italic;
-    }
-
-    .tiny-rule {
-      width: 5rem;
-      height: 0.35rem;
-      background: var(--red);
-      margin: 2rem 0 1rem;
-    }
-
-    .intro-text {
-      max-width: 34rem;
-      color: var(--gray);
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      font-weight: 500;
-    }
-
-    .base-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
-      border-left: var(--border-heavy);
-      border-right: var(--border-heavy);
-      border-bottom: var(--border-mid);
-    }
-
-    .panel {
-      padding: clamp(1.5rem, 4vw, 2.4rem);
-      background: var(--white);
-      min-height: 14rem;
-    }
-
-    .panel:first-child {
-      border-right: var(--border-mid);
-    }
-
-    .panel p {
-      max-width: 42rem;
-      color: var(--gray);
-      font-weight: 500;
-    }
-
-    .side-stack {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-    }
-
-    .side-stack .panel:first-child {
-      border-right: 0;
-      border-bottom: var(--border-mid);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      border-left: var(--border-heavy);
-      border-right: var(--border-heavy);
-      border-bottom: var(--border-mid);
-    }
-
-    .project-card {
-      padding: clamp(1.5rem, 4vw, 2.4rem);
-      border-right: var(--border-mid);
-      border-bottom: var(--border-mid);
-      background: var(--white);
-      color: inherit;
-      text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .project-card:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .project-card:hover p,
-    .project-card:hover h3,
-    .project-card:hover .project-arrow {
-      color: var(--white);
-    }
-
-    .project-card:hover .project-tags span {
-      border-color: var(--white);
-      background: transparent;
-      color: var(--white);
-    }
-
-    .project-type {
-      margin: 0 0 1rem;
-      color: var(--red);
+      margin: 0;
+      max-width: 900px;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(3.6rem, 11vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: 0.01em;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.68rem;
-      font-weight: 800;
+      overflow-wrap: break-word;
     }
 
-    .project-title {
-      margin-bottom: 1rem;
+    .serif-mark {
+      display: inline-block;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-style: italic;
+      color: var(--blood);
+      text-transform: none;
+      letter-spacing: -0.04em;
+      font-size: 0.95em;
     }
 
-    .project-desc {
-      max-width: 32rem;
+    .hero-text {
+      max-width: 540px;
+      margin: 1.5rem 0 0;
       color: var(--gray);
-      font-size: 0.92rem;
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
       font-weight: 500;
     }
 
-    .project-tags {
+    .stamp-row {
+      margin-top: 2rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1.4rem 0;
+      gap: 0.75rem;
     }
 
-    .project-tags span {
-      border: 1.5px solid var(--black);
-      padding: 0.32rem 0.6rem;
-      background: var(--off-white);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.65rem;
+    .stamp {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid var(--black);
+      padding: 0.45rem 0.7rem;
+      background: var(--white);
+      font-size: 0.72rem;
       font-weight: 800;
-    }
-
-    .project-arrow {
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: var(--gray);
+    }
+
+    .stamp.blood {
+      background: var(--blood);
+      color: var(--white);
+      border-color: var(--blood);
     }
 
     .section {
-      border-left: var(--border-heavy);
-      border-right: var(--border-heavy);
-      border-bottom: var(--border-mid);
-      padding: clamp(4rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem);
+      padding: clamp(3rem, 7vw, 5rem) clamp(1rem, 4vw, 2rem);
       background: var(--white);
+      border-bottom: 2px solid var(--black);
     }
 
-    .section p {
-      max-width: 42rem;
+    .section-heading {
+      margin-bottom: 1.8rem;
+      padding-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      border-bottom: 2px solid var(--black);
+    }
+
+    h2 {
+      margin: 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.88;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .section-number {
+      color: var(--blood);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .work-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .project-card {
+      padding: 1.1rem;
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr auto;
+      gap: 1rem;
+      align-items: center;
+      background: var(--white);
+      color: inherit;
+      text-decoration: none;
+      border: 2px solid var(--black);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .project-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 8px 8px 0 var(--black);
+      background: var(--light);
+    }
+
+    .project-type {
+      margin: 0;
+      color: var(--blood);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .project-title {
+      margin: 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .project-desc {
+      max-width: 520px;
+      margin: 0.35rem 0 0;
+      color: var(--gray);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .arrow {
+      color: var(--blood);
+      font-size: 2rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+      gap: clamp(1.5rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    .intro-grid p,
+    .section > p {
+      max-width: 640px;
+      margin-top: 0;
       color: var(--gray);
       font-weight: 500;
     }
 
+    .side-note {
+      padding-left: 1rem;
+      border-left: 5px solid var(--blood);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.1;
+    }
+
     .tag-row {
+      margin-top: 2rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.65rem;
-      margin-top: 2rem;
     }
 
     .tag-row span {
-      border: 2px solid var(--black);
-      background: var(--off-white);
-      padding: 0.65rem 0.8rem;
       min-height: 44px;
       display: inline-flex;
       align-items: center;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      border: 2px solid var(--black);
+      padding: 0.55rem 0.75rem;
+      background: var(--white);
       font-size: 0.72rem;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
-    .tag-row span:hover {
+    .tag-row span:nth-child(even) {
       background: var(--black);
       color: var(--white);
     }
 
-    .contact-links {
+    .links {
+      margin-top: 2rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-top: 2rem;
+      gap: 1rem;
     }
 
-    .contact-links a {
-      min-height: 44px;
+    .links a {
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
-      border-bottom: 2px solid var(--red);
-      color: var(--ink);
+      padding: 0.65rem 0.9rem;
+      background: var(--black);
+      color: var(--white);
+      border: 2px solid var(--black);
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.84rem;
+      letter-spacing: 0.13em;
+      font-size: 0.78rem;
       font-weight: 800;
     }
 
-    .contact-links a:hover {
-      color: var(--red);
+    .links a:hover {
+      background: var(--blood);
+      border-color: var(--blood);
     }
 
-    .site-footer {
-      border-left: var(--border-heavy);
-      border-right: var(--border-heavy);
-      border-bottom: var(--border-heavy);
+    .footer {
       padding: 1.2rem clamp(1rem, 4vw, 2rem);
       display: flex;
       justify-content: space-between;
       gap: 1rem;
-      color: var(--gray);
+      background: var(--black);
+      color: var(--white);
       text-transform: uppercase;
       letter-spacing: 0.13em;
       font-size: 0.68rem;
       font-weight: 800;
     }
 
-    @media (max-width: 850px) {
-      .top-bar,
+    @media (max-width: 800px) {
+      .top-strip,
       .site-header,
-      .site-footer {
-        flex-direction: column;
+      .footer {
         align-items: flex-start;
-      }
-
-      .base-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .panel:first-child {
-        border-right: 0;
-        border-bottom: var(--border-mid);
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        border-right: 0;
-      }
-    }
-
-    @media (max-width: 560px) {
-      :root {
-        --border-heavy: 3px solid var(--black);
-        --border-mid: 2px solid var(--black);
-      }
-
-      h1 {
-        font-size: clamp(3.3rem, 18vw, 5rem);
-      }
-
-      .top-bar,
-      .small-label {
-        letter-spacing: 0.16em;
+        flex-direction: column;
       }
 
       .hero {
-        background-size: 48px 48px;
+        min-height: auto;
+      }
+
+      .hero::after {
+        display: none;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page-shell {
+        border-left: 0;
+        border-right: 0;
+      }
+
+      h1 {
+        font-size: clamp(3.6rem, 20vw, 5.6rem);
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .project-card:hover {
+        transform: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="top-bar">
-    <span>Portfolio</span>
-    <span>IT · UX/UI · Design</span>
-  </header>
+  <div class="page-shell">
+    <header class="top-strip">
+      <span>Portfolio</span>
+      <span>IT · UX/UI · Design</span>
+    </header>
 
-  <header class="site-header">
-    <a class="logo" href="#">Destiny<span>.</span></a>
+    <header class="site-header">
+      <a class="logo" href="#">Destiny<span>.</span>Fae</a>
 
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#practice">Practice</a>
-      <a href="#links">Links</a>
-    </nav>
-  </header>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#practice">Practice</a>
+        <a href="#links">Links</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="ghost-letter" aria-hidden="true">D</div>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="label">Design focused · Tech minded</p>
 
-      <div class="hero-content">
-        <p class="small-label">IT Student · UX/UI · Design</p>
+          <h1>
+            Code,<br>
+            <span class="serif-mark">Design</span><br>
+            & digital experiments.
+          </h1>
 
-        <h1>
-          Systems,
-          <span class="accent-word">interfaces</span>
-          and visual work.
-        </h1>
+          <p class="hero-text">
+            Exploring design through systems and structure.
+          </p>
 
-        <div class="tiny-rule" aria-hidden="true"></div>
+          <div class="stamp-row" aria-label="Portfolio focus areas">
+            <span class="stamp blood">Design</span>
+            <span class="stamp">Frontend</span>
+            <span class="stamp">Digital Systems</span>
+            <span class="stamp">Creative technology</span>
+          </div>
+        </div>
+      </section>
 
-        <p class="intro-text">
-          Technical projects, design work and small experiments in digital alchemy.
-        </p>
-      </div>
-    </section>
+      <section id="work" class="section">
+        <div class="section-heading">
+          <h2>Selected Work</h2>
+          <span class="section-number">01</span>
+        </div>
 
-    <section id="work" class="base-grid">
-      <article class="panel">
-        <p class="small-label">Selected Work</p>
-        <h2>Technical + Design</h2>
-        <p>
-          A growing archive of code, layouts and interface experiments where technical thinking meets visual design.
-        </p>
-      </article>
+        <div class="work-list">
+          <a class="project-card" href="technical.html">
+            <div>
+              <p class="project-type">Technical</p>
+            </div>
 
-      <div class="side-stack">
-        <article class="panel">
-          <p class="small-label">Focus</p>
-          <h3>Usability first. Sharp layouts, functional design and technical thinking underneath it all.</h3>
-        </article>
+            <div>
+              <h3 class="project-title">Python Game Project</h3>
+              <p class="project-desc">
+                A text-based Python game with rooms, inventory, player choices and basic game logic.
+              </p>
+            </div>
 
-        <article class="panel">
-          <p class="small-label">Status</p>
-          <h3>Building steadily</h3>
-        </article>
-      </div>
-    </section>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
 
-    <<a class="project-card" href="technical.html">
-  <p class="project-type">Technical · Python</p>
-  <h3 class="project-title">Ozzy and The Tall Man</h3>
-  <p class="project-desc">
-    A Python text adventure game with rooms, inventory, player choices, a courage meter and a final rescue ending.
-  </p>
+          <a class="project-card" href="design.html">
+            <div>
+              <p class="project-type">Design</p>
+            </div>
 
-  <div class="project-tags">
-    <span>Python</span>
-    <span>Game Logic</span>
-    <span>Portfolio Project</span>
-  </div>
+            <div>
+              <h3 class="project-title">Design Work</h3>
+              <p class="project-desc">
+                Interface ideas, visual studies and design pieces with a focus on clarity and usability.
+              </p>
+            </div>
 
-  <span class="project-arrow">View Project</span>
-</a>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
 
-      <a class="project-card" href="design.html">
-        <p class="project-type">Design · UX/UI</p>
-        <h3 class="project-title">Design Work</h3>
-        <p class="project-desc">
-          Visual layouts, interface ideas and design studies. More finished pieces will be added here.
-        </p>
+          <a class="project-card" href="practice.html">
+            <div>
+              <p class="project-type">Practice</p>
+            </div>
 
-        <div class="project-tags">
+            <div>
+              <h3 class="project-title">Experiments</h3>
+              <p class="project-desc">
+                Small layout tests, CodePen sketches and unfinished ideas that help me build better work.
+              </p>
+            </div>
+
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-heading">
+          <h2>About</h2>
+          <span class="section-number">02</span>
+        </div>
+
+        <div class="intro-grid">
+          <div>
+            <p>
+              I am interested in UX/UI, frontend design and technical systems. My work usually starts with structure, then I push the visuals until it feels more like me.
+            </p>
+
+            <p>
+              I care about readable pages, accessible design, sharp layouts and details that make a project easier to use.
+            </p>
+          </div>
+
+          <aside class="side-note">
+            Design brain. Tech track. A little weird on purpose.
+          </aside>
+        </div>
+
+        <div class="tag-row">
+          <span>Python</span>
+          <span>HTML</span>
+          <span>CSS</span>
           <span>UX/UI</span>
+          <span>Accessibility</span>
+          <span>Frontend</span>
           <span>Adobe</span>
           <span>Figma</span>
         </div>
+      </section>
 
-        <span class="project-arrow">View Work</span>
-      </a>
-
-      <a class="project-card" href="practice.html">
-        <p class="project-type">Practice · CodePen</p>
-        <h3 class="project-title">Experiments</h3>
-        <p class="project-desc">
-          Small tests, layout ideas and pieces I use to practice frontend design.
-        </p>
-
-        <div class="project-tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>Practice</span>
+      <section id="practice" class="section">
+        <div class="section-heading">
+          <h2>Practice</h2>
+          <span class="section-number">03</span>
         </div>
 
-        <span class="project-arrow">View Experiments</span>
-      </a>
-    </section>
+        <p>
+          This is where I keep smaller work while I build stronger projects. Some pieces are finished. Some are tests. All of it teaches me something.
+        </p>
 
-    <section id="about" class="section">
-      <p class="small-label">About</p>
-      <h2>Design brain. Tech track.</h2>
+        <div class="links">
+          <a href="https://codepen.io/digital-destiny-99" target="_blank" rel="noopener">CodePen</a>
+        </div>
+      </section>
 
-      <p>
-        I am interested in UX/UI, frontend design and technical systems. My work usually starts with structure, then I push the visuals until it feels more like me.
-      </p>
+      <section id="links" class="section">
+        <div class="section-heading">
+          <h2>Elsewhere</h2>
+          <span class="section-number">04</span>
+        </div>
 
-      <p>
-        I care about clear layouts, accessibility, readable pages and details that make a project feel intentional.
-      </p>
+        <p>
+          Places where I keep projects, practice work and updates.
+        </p>
 
-      <div class="tag-row">
-        <span>Python</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>UX/UI</span>
-        <span>Networking</span>
-        <span>Databases</span>
-        <span>Adobe</span>
-        <span>Figma</span>
-      </div>
-    </section>
+        <div class="links">
+          <a href="https://github.com/digital-destiny-99" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://codepen.io/digital-destiny-99" target="_blank" rel="noopener">CodePen</a>
+          <a href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:YOUREMAIL@example.com">Email</a>
+        </div>
+      </section>
+    </main>
 
-    <section id="practice" class="section">
-      <p class="small-label">Practice</p>
-      <h2>Tests, sketches and unfinished things.</h2>
-
-      <p>
-        A space for early builds, small ideas and projects still evolving.
-      </p>
-
-      <div class="contact-links">
-        <a href="https://codepen.io/digital-destiny-99" target="_blank" rel="noopener">CodePen</a>
-      </div>
-    </section>
-
-    <section id="links" class="section">
-      <p class="small-label">Links</p>
-      <h2>Elsewhere</h2>
-
-      <p>
-        A few places where I keep projects and practice work.
-      </p>
-
-      <div class="contact-links">
-        <a href="https://github.com/digital-destiny-99" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://codepen.io/digital-destiny-99" target="_blank" rel="noopener">CodePen</a>
-        <a href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:YOUREMAIL@example.com">Email</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <span>Destiny Rodriguez</span>
-    <span>Portfolio in progress</span>
-  </footer>
+    <footer class="footer">
+      <span>Destiny Rodriguez</span>
+      <span>Portfolio in progress</span>
+    </footer>
+  </div>
 </body>
 </html>
