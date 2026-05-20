@@ -20,14 +20,8 @@
       --reading-width: 76ch;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
       margin: 0;
@@ -36,22 +30,11 @@
       font-family: "Space Grotesk", Arial, sans-serif;
       font-size: 1rem;
       line-height: 1.6;
-      letter-spacing: 0;
     }
 
-    a {
-      color: inherit;
-    }
-
-    a:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 5px;
-    }
-
-    ::selection {
-      background: var(--black);
-      color: var(--white);
-    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
+    ::selection { background: var(--black); color: var(--white); }
 
     .page-shell {
       width: min(100%, var(--max-width));
@@ -62,7 +45,7 @@
     }
 
     .top-strip {
-      min-height: 48px;
+      min-height: 44px;
       padding: 8px clamp(16px, 4vw, 32px);
       display: flex;
       justify-content: space-between;
@@ -72,16 +55,14 @@
       color: var(--white);
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
     }
 
-    .top-strip span:first-child {
-      color: var(--blood);
-    }
+    .top-strip span:first-child { color: var(--blood); }
 
     .site-header {
-      padding: 16px clamp(16px, 4vw, 32px);
+      padding: 14px clamp(16px, 4vw, 32px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -92,29 +73,27 @@
 
     .logo {
       font-family: "Bebas Neue", Impact, sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
       line-height: 1.1;
       letter-spacing: 0.04em;
       text-decoration: none;
     }
 
-    .logo span {
-      color: var(--blood);
-    }
+    .logo span { color: var(--blood); }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px 24px;
-      font-size: 0.8rem;
+      gap: 12px 20px;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-weight: 700;
     }
 
     .nav-links a {
-      min-width: 48px;
-      min-height: 48px;
+      min-width: 44px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -122,14 +101,11 @@
       border-bottom: 2px solid transparent;
     }
 
-    .nav-links a:hover {
-      border-bottom-color: var(--blood);
-      color: var(--blood);
-    }
+    .nav-links a:hover { border-bottom-color: var(--blood); color: var(--blood); }
 
     .hero {
-      min-height: 62vh;
-      padding: clamp(40px, 7vw, 76px) clamp(16px, 4vw, 32px);
+      min-height: 52vh;
+      padding: clamp(36px, 6vw, 64px) clamp(16px, 4vw, 32px);
       position: relative;
       overflow: hidden;
       background:
@@ -148,9 +124,9 @@
       writing-mode: vertical-rl;
       text-orientation: mixed;
       color: var(--gray);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 800;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       line-height: 1;
       z-index: 0;
     }
@@ -158,14 +134,14 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 760px;
+      max-width: 680px;
       padding-right: 56px;
     }
 
     .label {
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       color: var(--blood);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -173,10 +149,10 @@
 
     h1 {
       margin: 0;
-      max-width: 780px;
+      max-width: 680px;
       font-family: "Bebas Neue", Impact, sans-serif;
-      font-size: clamp(3rem, 8vw, 6.2rem);
-      line-height: 1.05;
+      font-size: clamp(2.4rem, 5.3vw, 4.2rem);
+      line-height: 1.07;
       letter-spacing: 0.01em;
       text-transform: uppercase;
       overflow-wrap: break-word;
@@ -185,8 +161,8 @@
     h2 {
       margin: 0;
       font-family: "Bebas Neue", Impact, sans-serif;
-      font-size: clamp(2.25rem, 5.5vw, 4.4rem);
-      line-height: 1.05;
+      font-size: clamp(1.9rem, 4vw, 3.1rem);
+      line-height: 1.06;
       letter-spacing: 0.02em;
       text-transform: uppercase;
     }
@@ -212,50 +188,44 @@
     }
 
     .hero-text {
-      margin: 22px 0 0;
-      font-size: clamp(1rem, 1.4vw, 1.12rem);
+      margin: 18px 0 0;
+      font-size: clamp(0.98rem, 1.1vw, 1.05rem);
     }
 
-    p + p {
-      margin-top: 24px;
-    }
+    p + p { margin-top: 20px; }
 
     .stamp-row {
-      margin-top: 28px;
+      margin-top: 22px;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .stamp {
-      min-width: 48px;
-      min-height: 48px;
+      min-width: 44px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       border: 2px solid var(--black);
-      padding: 8px 12px;
+      padding: 7px 11px;
       background: var(--white);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
 
-    .stamp.blood {
-      background: var(--blood);
-      color: var(--white);
-      border-color: var(--blood);
-    }
+    .stamp.blood { background: var(--blood); color: var(--white); border-color: var(--blood); }
 
     .section {
-      padding: clamp(44px, 6vw, 68px) clamp(16px, 4vw, 32px);
+      padding: clamp(36px, 5vw, 56px) clamp(16px, 4vw, 32px);
       background: var(--white);
       border-bottom: 2px solid var(--black);
     }
 
     .section-heading {
-      margin-bottom: 28px;
-      padding-bottom: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -265,21 +235,18 @@
 
     .section-number {
       color: var(--blood);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.12em;
     }
 
-    .work-list {
-      display: grid;
-      gap: 16px;
-    }
+    .work-list { display: grid; gap: 14px; }
 
     .project-card {
-      padding: 24px;
+      padding: 20px;
       display: grid;
       grid-template-columns: 0.7fr 1.3fr auto;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
       background: var(--white);
       color: inherit;
@@ -288,16 +255,12 @@
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
-    .project-card:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: 8px 8px 0 var(--black);
-      background: var(--light);
-    }
+    .project-card:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--black); background: var(--light); }
 
     .project-type {
       margin: 0;
       color: var(--blood);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -306,21 +269,14 @@
     .project-title {
       margin: 0;
       font-family: "Bebas Neue", Impact, sans-serif;
-      font-size: clamp(1.8rem, 4vw, 3.2rem);
-      line-height: 1.05;
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: 1.06;
       text-transform: uppercase;
       letter-spacing: 0.02em;
     }
 
-    .project-desc {
-      margin: 8px 0 0;
-      font-size: 1rem;
-    }
-
-    .arrow {
-      color: var(--blood);
-      font-size: 1.6rem;
-    }
+    .project-desc { margin: 8px 0 0; font-size: 0.98rem; }
+    .arrow { color: var(--blood); font-size: 1.35rem; }
 
     .intro-grid {
       display: grid;
@@ -329,75 +285,61 @@
       align-items: start;
     }
 
-    .intro-grid p {
-      margin-top: 0;
-    }
+    .intro-grid p { margin-top: 0; }
 
     .side-note {
       padding-left: 16px;
       border-left: 5px solid var(--blood);
       font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
-      line-height: 1.2;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      line-height: 1.25;
     }
 
-    .tag-row {
-      margin-top: 28px;
+    .tag-row,
+    .links {
+      margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .tag-row span {
-      min-width: 48px;
-      min-height: 48px;
+      min-width: 44px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       border: 2px solid var(--black);
-      padding: 8px 12px;
+      padding: 7px 11px;
       background: var(--white);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
 
-    .tag-row span:nth-child(even) {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .links {
-      margin-top: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .tag-row span:nth-child(even) { background: var(--black); color: var(--white); }
 
     .links a {
-      min-width: 48px;
-      min-height: 48px;
+      min-width: 44px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 16px;
+      padding: 8px 14px;
       background: var(--black);
       color: var(--white);
       border: 2px solid var(--black);
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
     }
 
-    .links a:hover {
-      background: var(--blood);
-      border-color: var(--blood);
-    }
+    .links a:hover { background: var(--blood); border-color: var(--blood); }
 
     .footer {
-      padding: 24px clamp(16px, 4vw, 32px);
+      padding: 22px clamp(16px, 4vw, 32px);
       display: flex;
       justify-content: space-between;
       gap: 20px;
@@ -405,70 +347,32 @@
       color: var(--white);
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
     }
 
     @media (max-width: 800px) {
       .top-strip,
       .site-header,
-      .footer {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero::after {
-        display: none;
-      }
-
-      .hero-content {
-        padding-right: 0;
-      }
-
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      .intro-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .arrow {
-        font-size: 1.5rem;
-      }
+      .footer { align-items: flex-start; flex-direction: column; }
+      .hero { min-height: auto; }
+      .hero::after { display: none; }
+      .hero-content { padding-right: 0; }
+      .project-card { grid-template-columns: 1fr; }
+      .intro-grid { grid-template-columns: 1fr; }
+      .arrow { font-size: 1.3rem; }
     }
 
     @media (max-width: 520px) {
-      .page-shell {
-        border-left: 0;
-        border-right: 0;
-      }
-
-      h1 {
-        font-size: clamp(3rem, 16vw, 4.6rem);
-      }
-
-      .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-      }
+      .page-shell { border-left: 0; border-right: 0; }
+      h1 { font-size: clamp(2.3rem, 12vw, 3.25rem); }
+      h2 { font-size: clamp(1.85rem, 9vw, 2.6rem); }
+      .section-heading { align-items: flex-start; flex-direction: column; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-
-      .project-card:hover {
-        transform: none;
-      }
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+      .project-card:hover { transform: none; }
     }
   </style>
 </head>
