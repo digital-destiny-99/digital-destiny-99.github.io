@@ -6,7 +6,7 @@
   <title>Destiny Rodriguez | Portfolio</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 
     :root {
       --black: #050505;
@@ -72,10 +72,10 @@
     }
 
     .logo {
-      font-size: clamp(1.45rem, 2.6vw, 2.1rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      font-weight: 800;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      line-height: 1;
+      letter-spacing: 0.03em;
       text-decoration: none;
     }
 
@@ -145,22 +145,26 @@
 
     h1, h2, h3 { margin: 0; }
 
+    h1,
+    h2,
+    .project-title {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
     h1 {
       max-width: 720px;
-      font-size: clamp(2.35rem, 5vw, 4.1rem);
-      line-height: 1.08;
-      letter-spacing: -0.06em;
-      font-weight: 800;
-      text-transform: uppercase;
+      font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: 0.015em;
       overflow-wrap: break-word;
     }
 
     h2 {
-      font-size: clamp(1.8rem, 3.8vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.05em;
-      font-weight: 800;
-      text-transform: uppercase;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
     }
 
     .serif-mark {
@@ -170,7 +174,7 @@
       color: var(--blood);
       text-transform: none;
       letter-spacing: -0.04em;
-      font-size: 1.05em;
+      font-size: 1.03em;
       font-weight: 400;
     }
 
@@ -244,7 +248,7 @@
 
     .project-card:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--black); background: var(--light); }
     .project-type { margin: 0; color: var(--blood); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; }
-    .project-title { font-size: clamp(1.45rem, 2.8vw, 2.2rem); line-height: 1.12; letter-spacing: -0.04em; font-weight: 800; text-transform: uppercase; }
+    .project-title { font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1; letter-spacing: 0.02em; }
     .project-desc { margin: 8px 0 0; font-size: 0.96rem; }
     .arrow { color: var(--blood); font-size: 1.25rem; }
 
@@ -300,8 +304,8 @@
 
     @media (max-width: 520px) {
       .page-shell { border-left: 0; border-right: 0; }
-      h1 { font-size: clamp(2.1rem, 11vw, 3rem); }
-      h2 { font-size: clamp(1.65rem, 8vw, 2.35rem); }
+      h1 { font-size: clamp(2.5rem, 13vw, 3.6rem); }
+      h2 { font-size: clamp(1.9rem, 9vw, 2.8rem); }
       .section-heading { align-items: flex-start; flex-direction: column; }
     }
 
